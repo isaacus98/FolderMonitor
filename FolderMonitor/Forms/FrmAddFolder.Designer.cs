@@ -34,10 +34,10 @@
             this.GbxOptions = new System.Windows.Forms.GroupBox();
             this.ChkIncludeSubdirectories = new System.Windows.Forms.CheckBox();
             this.GbxEvents = new System.Windows.Forms.GroupBox();
-            this.ChkCreated = new System.Windows.Forms.CheckBox();
-            this.ChkChanged = new System.Windows.Forms.CheckBox();
-            this.ChkRenamed = new System.Windows.Forms.CheckBox();
             this.ChkDeleted = new System.Windows.Forms.CheckBox();
+            this.ChkRenamed = new System.Windows.Forms.CheckBox();
+            this.ChkChanged = new System.Windows.Forms.CheckBox();
+            this.ChkCreated = new System.Windows.Forms.CheckBox();
             this.GbxOptions.SuspendLayout();
             this.GbxEvents.SuspendLayout();
             this.SuspendLayout();
@@ -93,29 +93,17 @@
             this.GbxEvents.TabStop = false;
             this.GbxEvents.Text = "Events";
             // 
-            // ChkCreated
+            // ChkDeleted
             // 
-            this.ChkCreated.AutoSize = true;
-            this.ChkCreated.Checked = true;
-            this.ChkCreated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkCreated.Location = new System.Drawing.Point(6, 22);
-            this.ChkCreated.Name = "ChkCreated";
-            this.ChkCreated.Size = new System.Drawing.Size(67, 19);
-            this.ChkCreated.TabIndex = 4;
-            this.ChkCreated.Text = "Created";
-            this.ChkCreated.UseVisualStyleBackColor = true;
-            // 
-            // ChkChanged
-            // 
-            this.ChkChanged.AutoSize = true;
-            this.ChkChanged.Checked = true;
-            this.ChkChanged.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkChanged.Location = new System.Drawing.Point(6, 47);
-            this.ChkChanged.Name = "ChkChanged";
-            this.ChkChanged.Size = new System.Drawing.Size(74, 19);
-            this.ChkChanged.TabIndex = 5;
-            this.ChkChanged.Text = "Changed";
-            this.ChkChanged.UseVisualStyleBackColor = true;
+            this.ChkDeleted.AutoSize = true;
+            this.ChkDeleted.Checked = true;
+            this.ChkDeleted.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkDeleted.Location = new System.Drawing.Point(114, 47);
+            this.ChkDeleted.Name = "ChkDeleted";
+            this.ChkDeleted.Size = new System.Drawing.Size(66, 19);
+            this.ChkDeleted.TabIndex = 7;
+            this.ChkDeleted.Text = "Deleted";
+            this.ChkDeleted.UseVisualStyleBackColor = true;
             // 
             // ChkRenamed
             // 
@@ -129,17 +117,29 @@
             this.ChkRenamed.Text = "Renamed";
             this.ChkRenamed.UseVisualStyleBackColor = true;
             // 
-            // ChkDeleted
+            // ChkChanged
             // 
-            this.ChkDeleted.AutoSize = true;
-            this.ChkDeleted.Checked = true;
-            this.ChkDeleted.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkDeleted.Location = new System.Drawing.Point(114, 47);
-            this.ChkDeleted.Name = "ChkDeleted";
-            this.ChkDeleted.Size = new System.Drawing.Size(66, 19);
-            this.ChkDeleted.TabIndex = 7;
-            this.ChkDeleted.Text = "Deleted";
-            this.ChkDeleted.UseVisualStyleBackColor = true;
+            this.ChkChanged.AutoSize = true;
+            this.ChkChanged.Checked = true;
+            this.ChkChanged.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkChanged.Location = new System.Drawing.Point(6, 47);
+            this.ChkChanged.Name = "ChkChanged";
+            this.ChkChanged.Size = new System.Drawing.Size(74, 19);
+            this.ChkChanged.TabIndex = 5;
+            this.ChkChanged.Text = "Changed";
+            this.ChkChanged.UseVisualStyleBackColor = true;
+            // 
+            // ChkCreated
+            // 
+            this.ChkCreated.AutoSize = true;
+            this.ChkCreated.Checked = true;
+            this.ChkCreated.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkCreated.Location = new System.Drawing.Point(6, 22);
+            this.ChkCreated.Name = "ChkCreated";
+            this.ChkCreated.Size = new System.Drawing.Size(67, 19);
+            this.ChkCreated.TabIndex = 4;
+            this.ChkCreated.Text = "Created";
+            this.ChkCreated.UseVisualStyleBackColor = true;
             // 
             // FrmAddFolder
             // 
