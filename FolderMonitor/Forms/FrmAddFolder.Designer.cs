@@ -60,6 +60,7 @@
             this.BtSearch.TabIndex = 1;
             this.BtSearch.Text = "...";
             this.BtSearch.UseVisualStyleBackColor = true;
+            this.BtSearch.Click += new System.EventHandler(this.BtSearch_Click);
             // 
             // GbxOptions
             // 
@@ -152,6 +153,7 @@
             this.BtSave.TabIndex = 4;
             this.BtSave.Text = "Save";
             this.BtSave.UseVisualStyleBackColor = true;
+            this.BtSave.Click += new System.EventHandler(this.BtSave_Click);
             // 
             // BtCancel
             // 
@@ -161,11 +163,14 @@
             this.BtCancel.TabIndex = 5;
             this.BtCancel.Text = "Cancel";
             this.BtCancel.UseVisualStyleBackColor = true;
+            this.BtCancel.Click += new System.EventHandler(this.BtCancel_Click);
             // 
             // FrmAddFolder
             // 
+            this.AcceptButton = this.BtSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtCancel;
             this.ClientSize = new System.Drawing.Size(313, 232);
             this.Controls.Add(this.BtCancel);
             this.Controls.Add(this.BtSave);
