@@ -1,9 +1,12 @@
+using FolderMonitor.Class;
 using FolderMonitor.Forms;
 
 namespace FolderMonitor
 {
     public partial class FrmMain : Form
     {
+        private List<Monitoring>? Monitorings;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -11,12 +14,13 @@ namespace FolderMonitor
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            Monitorings = new List<Monitoring>();
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            e.Cancel = true;
+            this.Hide();
         }
 
         private void BtAddFolder_Click(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace FolderMonitor
 
         private void BtExit_Click(object sender, EventArgs e)
         {
-
+            Environment.Exit(0);
         }
 
         private void BtAbout_Click(object sender, EventArgs e)
@@ -42,12 +46,12 @@ namespace FolderMonitor
 
         private void BtOpen_Click(object sender, EventArgs e)
         {
-
+            this.Show();
         }
 
         private void Notify_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            this.Show();
         }
     }
 }

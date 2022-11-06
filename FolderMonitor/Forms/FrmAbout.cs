@@ -20,12 +20,12 @@ namespace FolderMonitor.Forms
 
         private void LbIcons2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(new ProcessStartInfo { FileName = @"https://icons8.com", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://icons8.com", UseShellExecute = true });
         }
 
         private void LbLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(new ProcessStartInfo { FileName = @"https://www.gnu.org/licenses/gpl-3.0.en.html", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://www.gnu.org/licenses/gpl-3.0.en.html", UseShellExecute = true });
         }
     }
 }
