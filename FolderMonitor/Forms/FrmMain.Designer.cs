@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.Gbx = new System.Windows.Forms.GroupBox();
             this.DgvFolders = new System.Windows.Forms.DataGridView();
+            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.MenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.BtAddFolder = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +42,6 @@
             this.BtExit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.BtAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.BtAbout2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,14 +67,14 @@
             // 
             this.DgvFolders.AllowUserToAddRows = false;
             this.DgvFolders.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvFolders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvFolders.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvFolders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvFolders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColDirectoryPath});
@@ -86,6 +86,15 @@
             this.DgvFolders.RowTemplate.Height = 25;
             this.DgvFolders.Size = new System.Drawing.Size(764, 383);
             this.DgvFolders.TabIndex = 0;
+            // 
+            // ColDirectoryPath
+            // 
+            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColDirectoryPath.HeaderText = "Directory path";
+            this.ColDirectoryPath.Name = "ColDirectoryPath";
+            this.ColDirectoryPath.ReadOnly = true;
             // 
             // Menu
             // 
@@ -115,6 +124,7 @@
             this.BtAddFolder.Name = "BtAddFolder";
             this.BtAddFolder.Size = new System.Drawing.Size(180, 22);
             this.BtAddFolder.Text = "Add folder";
+            this.BtAddFolder.Click += new System.EventHandler(this.BtAddFolder_Click);
             // 
             // BtDeleteFolder
             // 
@@ -122,12 +132,14 @@
             this.BtDeleteFolder.Name = "BtDeleteFolder";
             this.BtDeleteFolder.Size = new System.Drawing.Size(180, 22);
             this.BtDeleteFolder.Text = "Delete folder";
+            this.BtDeleteFolder.Click += new System.EventHandler(this.BtDeleteFolder_Click);
             // 
             // BtExit
             // 
             this.BtExit.Name = "BtExit";
             this.BtExit.Size = new System.Drawing.Size(180, 22);
             this.BtExit.Text = "Exit";
+            this.BtExit.Click += new System.EventHandler(this.BtExit_Click);
             // 
             // MenuHelp
             // 
@@ -143,15 +155,7 @@
             this.BtAbout.Name = "BtAbout";
             this.BtAbout.Size = new System.Drawing.Size(189, 22);
             this.BtAbout.Text = "About Folder monitor";
-            // 
-            // ColDirectoryPath
-            // 
-            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColDirectoryPath.HeaderText = "Directory path";
-            this.ColDirectoryPath.Name = "ColDirectoryPath";
-            this.ColDirectoryPath.ReadOnly = true;
+            this.BtAbout.Click += new System.EventHandler(this.BtAbout_Click);
             // 
             // ContextMenu
             // 
@@ -167,24 +171,28 @@
             this.BtOpen.Name = "BtOpen";
             this.BtOpen.Size = new System.Drawing.Size(107, 22);
             this.BtOpen.Text = "Open";
+            this.BtOpen.Click += new System.EventHandler(this.BtOpen_Click);
             // 
             // BtAbout2
             // 
             this.BtAbout2.Name = "BtAbout2";
             this.BtAbout2.Size = new System.Drawing.Size(107, 22);
             this.BtAbout2.Text = "About";
+            this.BtAbout2.Click += new System.EventHandler(this.BtAbout_Click);
             // 
             // BtExit2
             // 
             this.BtExit2.Name = "BtExit2";
             this.BtExit2.Size = new System.Drawing.Size(107, 22);
             this.BtExit2.Text = "Exit";
+            this.BtExit2.Click += new System.EventHandler(this.BtExit_Click);
             // 
             // Notify
             // 
             this.Notify.ContextMenuStrip = this.ContextMenu;
             this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
             this.Notify.Visible = true;
+            this.Notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Notify_MouseDoubleClick);
             // 
             // FrmMain
             // 
@@ -201,6 +209,8 @@
             this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.Text = "Folder Monitor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.Gbx.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvFolders)).EndInit();
             this.Menu.ResumeLayout(false);
