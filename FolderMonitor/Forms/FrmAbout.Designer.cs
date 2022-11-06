@@ -104,6 +104,7 @@
             this.LbIcons2.TabIndex = 6;
             this.LbIcons2.TabStop = true;
             this.LbIcons2.Text = "icons8.com";
+            this.LbIcons2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LbIcons2_LinkClicked);
             // 
             // LbLicense
             // 
@@ -114,6 +115,7 @@
             this.LbLicense.TabIndex = 7;
             this.LbLicense.TabStop = true;
             this.LbLicense.Text = "License";
+            this.LbLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LbLicense_LinkClicked);
             // 
             // FrmAbout
             // 
