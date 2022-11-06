@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PbLogo = new System.Windows.Forms.PictureBox();
             this.LbNameApp = new System.Windows.Forms.Label();
             this.LbVersion = new System.Windows.Forms.Label();
             this.LbVersion2 = new System.Windows.Forms.Label();
@@ -37,17 +37,17 @@
             this.LbIcons = new System.Windows.Forms.Label();
             this.LbIcons2 = new System.Windows.Forms.LinkLabel();
             this.LbLicense = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PbLogo
             // 
-            this.pictureBox1.Image = global::FolderMonitor.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 96);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.PbLogo.Image = global::FolderMonitor.Properties.Resources.Logo;
+            this.PbLogo.Location = new System.Drawing.Point(12, 12);
+            this.PbLogo.Name = "PbLogo";
+            this.PbLogo.Size = new System.Drawing.Size(103, 96);
+            this.PbLogo.TabIndex = 0;
+            this.PbLogo.TabStop = false;
             // 
             // LbNameApp
             // 
@@ -129,13 +129,13 @@
             this.Controls.Add(this.LbVersion2);
             this.Controls.Add(this.LbVersion);
             this.Controls.Add(this.LbNameApp);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PbLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAbout";
             this.Text = "About Folder Monitor";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,7 +143,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox PbLogo;
         private Label LbNameApp;
         private Label LbVersion;
         private Label LbVersion2;
