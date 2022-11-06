@@ -5,7 +5,7 @@ namespace FolderMonitor
 {
     public partial class FrmMain : Form
     {
-        private List<Monitoring>? Monitorings;
+        private List<Monitoring> Monitorings;
 
         public FrmMain()
         {
@@ -41,7 +41,27 @@ namespace FolderMonitor
 
         private void BtDeleteFolder_Click(object sender, EventArgs e)
         {
+            DialogResult result;
+            string folderName;
+            string[] pathElements;
+            try
+            {
+                pathElements = DgvFolders.CurrentRow.Cells[0].Value.ToString().Split();
+                folderName = pathElements[pathElements.Length - 1];
 
+                result = MessageBox.Show($"Are you sure you want to remove the monitoring of the '{folderName}' folder?", "Remove folder monitoring", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                //Delete element from list and datagrid
+                if(result == DialogResult.Yes)
+                {
+                    Monitorings.RemoveAt(DgvFolders.CurrentRow.Index);
+                    DgvFolders.Rows.RemoveAt(DgvFolders.CurrentRow.Index);
+                }
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Error deleting the folder being monitored. The monitored folder will not be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtExit_Click(object sender, EventArgs e)

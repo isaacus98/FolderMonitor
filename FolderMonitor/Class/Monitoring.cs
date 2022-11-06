@@ -8,7 +8,7 @@ namespace FolderMonitor.Class
 {
     public class Monitoring
     {
-        private FileSystemWatcher? Watcher;
+        private FileSystemWatcher Watcher;
         public string Path { get; set; }
         public bool IncludeSubdirectories { get; set; }
         public bool Created { get; set; }
