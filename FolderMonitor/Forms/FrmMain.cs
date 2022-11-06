@@ -25,7 +25,18 @@ namespace FolderMonitor
 
         private void BtAddFolder_Click(object sender, EventArgs e)
         {
+            int index;
 
+            FrmAddFolder frm = new FrmAddFolder(Monitorings);
+            frm.ShowDialog();
+
+            //Refresh datagrid
+            DgvFolders.Rows.Clear();
+            foreach(Monitoring monitoring in Monitorings)
+            {
+                index = DgvFolders.Rows.Add();
+                DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+            }
         }
 
         private void BtDeleteFolder_Click(object sender, EventArgs e)

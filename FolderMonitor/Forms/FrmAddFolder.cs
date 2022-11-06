@@ -14,9 +14,12 @@ namespace FolderMonitor.Forms
 {
     public partial class FrmAddFolder : Form
     {
-        public FrmAddFolder()
+        private List<Monitoring> Monitorings;
+
+        public FrmAddFolder(List<Monitoring> monitorings)
         {
             InitializeComponent();
+            Monitorings = monitorings;
         }
 
         private void BtSearch_Click(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace FolderMonitor.Forms
             Monitoring monitor = new Monitoring(path: TxtPath.Text, includeSubdirectories: ChkIncludeSubdirectories.Checked, created: ChkCreated.Checked, changed: ChkChanged.Checked, deleted: ChkDeleted.Checked, renamed: ChkRenamed.Checked);
             monitor.LoadFileSystemWatcher();
             monitor.LoadEvents();
+            Monitorings.Add(monitor);
 
             this.Close();
         }
