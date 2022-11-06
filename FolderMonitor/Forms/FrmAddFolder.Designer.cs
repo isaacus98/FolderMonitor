@@ -38,6 +38,9 @@
             this.ChkRenamed = new System.Windows.Forms.CheckBox();
             this.ChkChanged = new System.Windows.Forms.CheckBox();
             this.ChkCreated = new System.Windows.Forms.CheckBox();
+            this.BtSave = new System.Windows.Forms.Button();
+            this.BtCancel = new System.Windows.Forms.Button();
+            this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.GbxOptions.SuspendLayout();
             this.GbxEvents.SuspendLayout();
             this.SuspendLayout();
@@ -141,11 +144,31 @@
             this.ChkCreated.Text = "Created";
             this.ChkCreated.UseVisualStyleBackColor = true;
             // 
+            // BtSave
+            // 
+            this.BtSave.Location = new System.Drawing.Point(12, 181);
+            this.BtSave.Name = "BtSave";
+            this.BtSave.Size = new System.Drawing.Size(142, 40);
+            this.BtSave.TabIndex = 4;
+            this.BtSave.Text = "Save";
+            this.BtSave.UseVisualStyleBackColor = true;
+            // 
+            // BtCancel
+            // 
+            this.BtCancel.Location = new System.Drawing.Point(160, 181);
+            this.BtCancel.Name = "BtCancel";
+            this.BtCancel.Size = new System.Drawing.Size(142, 40);
+            this.BtCancel.TabIndex = 5;
+            this.BtCancel.Text = "Cancel";
+            this.BtCancel.UseVisualStyleBackColor = true;
+            // 
             // FrmAddFolder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 188);
+            this.ClientSize = new System.Drawing.Size(313, 232);
+            this.Controls.Add(this.BtCancel);
+            this.Controls.Add(this.BtSave);
             this.Controls.Add(this.GbxEvents);
             this.Controls.Add(this.GbxOptions);
             this.Controls.Add(this.BtSearch);
@@ -155,7 +178,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddFolder";
-            this.Text = "Folder Monitor";
+            this.Text = "Add Folder";
             this.GbxOptions.ResumeLayout(false);
             this.GbxOptions.PerformLayout();
             this.GbxEvents.ResumeLayout(false);
@@ -176,5 +199,8 @@
         private CheckBox ChkRenamed;
         private CheckBox ChkChanged;
         private CheckBox ChkCreated;
+        private Button BtSave;
+        private Button BtCancel;
+        private FolderBrowserDialog FolderBrowser;
     }
 }
