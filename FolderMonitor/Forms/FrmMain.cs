@@ -1,3 +1,5 @@
+using FolderMonitor.Forms;
+
 namespace FolderMonitor
 {
     public partial class FrmMain : Form
@@ -34,7 +36,8 @@ namespace FolderMonitor
 
         private void BtAbout_Click(object sender, EventArgs e)
         {
-
+            FrmAbout frm = new FrmAbout();
+            frm.ShowDialog();
         }
 
         private void BtOpen_Click(object sender, EventArgs e)

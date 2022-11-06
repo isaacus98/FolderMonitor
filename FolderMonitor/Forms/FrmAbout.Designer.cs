@@ -53,7 +53,7 @@
             // 
             this.LbNameApp.AutoSize = true;
             this.LbNameApp.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LbNameApp.Location = new System.Drawing.Point(130, 12);
+            this.LbNameApp.Location = new System.Drawing.Point(130, 21);
             this.LbNameApp.Name = "LbNameApp";
             this.LbNameApp.Size = new System.Drawing.Size(148, 25);
             this.LbNameApp.TabIndex = 1;
@@ -62,7 +62,7 @@
             // LbVersion
             // 
             this.LbVersion.AutoSize = true;
-            this.LbVersion.Location = new System.Drawing.Point(130, 37);
+            this.LbVersion.Location = new System.Drawing.Point(130, 46);
             this.LbVersion.Name = "LbVersion";
             this.LbVersion.Size = new System.Drawing.Size(48, 15);
             this.LbVersion.TabIndex = 2;
@@ -71,7 +71,7 @@
             // LbVersion2
             // 
             this.LbVersion2.AutoSize = true;
-            this.LbVersion2.Location = new System.Drawing.Point(184, 37);
+            this.LbVersion2.Location = new System.Drawing.Point(184, 46);
             this.LbVersion2.Name = "LbVersion2";
             this.LbVersion2.Size = new System.Drawing.Size(38, 15);
             this.LbVersion2.TabIndex = 3;

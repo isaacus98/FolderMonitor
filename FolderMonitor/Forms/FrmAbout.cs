@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,12 @@ namespace FolderMonitor.Forms
 
         private void LbIcons2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://icons8.com");
+            System.Diagnostics.Process.Start(new ProcessStartInfo { FileName = @"https://icons8.com", UseShellExecute = true });
         }
 
         private void LbLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html");
+            System.Diagnostics.Process.Start(new ProcessStartInfo { FileName = @"https://www.gnu.org/licenses/gpl-3.0.en.html", UseShellExecute = true });
         }
     }
 }
