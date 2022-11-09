@@ -22,6 +22,17 @@ namespace FolderMonitor
                 if(File.Exists(PathFolder + @"\config.json"))
                 {
                     Monitorings = JsonConvert.DeserializeObject<List<Monitoring>>(File.ReadAllText(PathFolder + @"\config.json"));
+
+                    foreach(Monitoring monitoring in Monitorings)
+                    {
+                        //Load FileSystemWatcher
+                        monitoring.LoadFileSystemWatcher();
+                        monitoring.LoadEvents();
+
+                        //Load data in datagridview
+                        int index = DgvFolders.Rows.Add();
+                        DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+                    }
                 }
                 else
                 {
