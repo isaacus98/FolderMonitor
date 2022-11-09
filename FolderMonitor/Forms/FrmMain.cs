@@ -21,7 +21,7 @@ namespace FolderMonitor
             {
                 if(File.Exists(PathFolder + @"\config.json"))
                 {
-                    Monitorings = JsonConvert.DeserializeObject<Monitoring>(File.ReadAllText(PathFolder + @"\config.json"));
+                    Monitorings = JsonConvert.DeserializeObject<List<Monitoring>>(File.ReadAllText(PathFolder + @"\config.json"));
                 }
                 else
                 {
