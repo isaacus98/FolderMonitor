@@ -1,11 +1,13 @@
 using FolderMonitor.Class;
 using FolderMonitor.Forms;
+using Newtonsoft.Json;
 
 namespace FolderMonitor
 {
     public partial class FrmMain : Form
     {
         private List<Monitoring> Monitorings;
+        private string PathFolder = @"C:\Users\" + Environment.UserName + @"\AppData\Local\FolderMonitor";
 
         public FrmMain()
         {
@@ -47,7 +49,7 @@ namespace FolderMonitor
             try
             {
                 pathElements = DgvFolders.CurrentRow.Cells[0].Value.ToString().Split();
-                folderName = pathElements[pathElements.Length - 1];
+                folderName = pathElements[^1];
 
                 result = MessageBox.Show($"Are you sure you want to remove the monitoring of the '{folderName}' folder?", "Remove folder monitoring", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
@@ -66,6 +68,12 @@ namespace FolderMonitor
 
         private void BtExit_Click(object sender, EventArgs e)
         {
+            string json;
+            
+            Directory.CreateDirectory(PathFolder);
+            json = JsonConvert.SerializeObject(Monitorings, Formatting.Indented);
+            File.Create(PathFolder);
+
             Environment.Exit(0);
         }
 
