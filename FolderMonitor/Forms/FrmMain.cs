@@ -16,7 +16,22 @@ namespace FolderMonitor
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            Monitorings = new List<Monitoring>();
+            //Load configuration file
+            if (Directory.Exists(PathFolder))
+            {
+                if(File.Exists(PathFolder + @"\config.json"))
+                {
+                    Monitorings = JsonConvert.DeserializeObject<Monitoring>(File.ReadAllText(PathFolder + @"\config.json"));
+                }
+                else
+                {
+                    Monitorings = new List<Monitoring>();
+                }
+            }
+            else
+            {
+                Monitorings = new List<Monitoring>();
+            }
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -70,9 +85,10 @@ namespace FolderMonitor
         {
             string json;
             
+            //Serialize object
             Directory.CreateDirectory(PathFolder);
             json = JsonConvert.SerializeObject(Monitorings, Formatting.Indented);
-            File.Create(PathFolder);
+            File.WriteAllText(PathFolder + @"\config.json", json);
 
             Environment.Exit(0);
         }
