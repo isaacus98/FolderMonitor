@@ -137,7 +137,9 @@ namespace FolderMonitor
 
         private void BtActivate_Click(object sender, EventArgs e)
         {
-
+            int index = DgvFolders.CurrentRow.Index;
+            Monitorings[index].LoadFileSystemWatcher();
+            Monitorings[index].LoadEvents();
         }
 
         private void BtOptions_Click(object sender, EventArgs e)
