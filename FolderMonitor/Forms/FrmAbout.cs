@@ -18,6 +18,11 @@ namespace FolderMonitor.Forms
             InitializeComponent();
         }
 
+        private void FrmAbout_Load(object sender, EventArgs e)
+        {
+            LbVersion2.Text = Application.ProductVersion;
+        }
+
         private void LbIcons2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(new ProcessStartInfo { FileName = @"https://icons8.com", UseShellExecute = true });
