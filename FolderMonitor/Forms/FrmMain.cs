@@ -25,16 +25,49 @@ namespace FolderMonitor
                 {
                     Monitorings = JsonConvert.DeserializeObject<List<Monitoring>>(File.ReadAllText(PathFolder + @"\config.json"));
 
-                    foreach(Monitoring monitoring in Monitorings)
+                    //Monitoring[] monitorings = new Monitoring[Monitorings.Count];
+                    //Monitorings.CopyTo(monitorings);
+
+                    for(int i = 0; i < Monitorings.Count; i++)
                     {
                         //Load FileSystemWatcher
-                        monitoring.LoadFileSystemWatcher();
-                        monitoring.LoadEvents();
+                        Monitorings[i].LoadFileSystemWatcher();
 
-                        //Load data in datagridview
-                        int index = DgvFolders.Rows.Add();
-                        DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+                        //Delete object from list if path not exist
+                        if (Monitorings[i].ObjectError)
+                        {
+                            Monitorings.RemoveAt(i);
+                        }
+                        else
+                        {
+                            Monitorings[i].LoadEvents();
+
+                            //Load data in datagridview
+                            int index = DgvFolders.Rows.Add();
+                            DgvFolders.Rows[index].Cells[0].Value = Monitorings[i].Path;
+                        }
                     }
+
+                    //foreach(Monitoring monitoring in Monitorings)
+                    //{
+                    //    //Load FileSystemWatcher
+                    //    monitoring.LoadFileSystemWatcher();
+
+                    //    //Delete object from list if path not exist
+                    //    if (monitoring.ObjectError)
+                    //    {
+                    //        Monitorings.Remove(monitoring);
+                    //    }
+                    //    else
+                    //    {
+                    //        monitoring.LoadEvents();
+
+                    //        //Load data in datagridview
+                    //        int index = DgvFolders.Rows.Add();
+                    //        DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+                    //    }
+
+                    //}
                 }
                 else
                 {

@@ -9,12 +9,14 @@ namespace FolderMonitor.Class
     public class Monitoring
     {
         private FileSystemWatcher Watcher;
+        private bool _ObjectError = false;
         public string Path { get; set; }
         public bool IncludeSubdirectories { get; set; }
         public bool Created { get; set; }
         public bool Changed { get; set; }
         public bool Deleted { get; set; }
         public bool Renamed { get; set; }
+        public bool ObjectError { get => _ObjectError; }
 
         public Monitoring(string path, bool includeSubdirectories, bool created, bool changed, bool deleted, bool renamed)
         {
@@ -28,20 +30,28 @@ namespace FolderMonitor.Class
 
         public void LoadFileSystemWatcher()
         {
-            Watcher = new FileSystemWatcher(Path)
+            try
             {
-                NotifyFilter = NotifyFilters.Attributes
-                               | NotifyFilters.CreationTime
-                               | NotifyFilters.DirectoryName
-                               | NotifyFilters.FileName
-                               | NotifyFilters.LastAccess
-                               | NotifyFilters.LastWrite
-                               | NotifyFilters.Security
-                               | NotifyFilters.Size,
+                Watcher = new FileSystemWatcher(Path)
+                {
+                    NotifyFilter = NotifyFilters.Attributes
+                                   | NotifyFilters.CreationTime
+                                   | NotifyFilters.DirectoryName
+                                   | NotifyFilters.FileName
+                                   | NotifyFilters.LastAccess
+                                   | NotifyFilters.LastWrite
+                                   | NotifyFilters.Security
+                                   | NotifyFilters.Size,
 
-                IncludeSubdirectories = this.IncludeSubdirectories,
-                EnableRaisingEvents = true
-            };
+                    IncludeSubdirectories = this.IncludeSubdirectories,
+                    EnableRaisingEvents = true
+                };
+            }
+            catch(ArgumentException e) 
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ObjectError = true;
+            }
         }
 
         public void LoadEvents()
