@@ -18,6 +18,8 @@ namespace FolderMonitor
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            DialogResult result;
+
             //Load configuration file
             if (Directory.Exists(PathFolder))
             {
@@ -33,7 +35,9 @@ namespace FolderMonitor
                         //Delete object from list if path not exist
                         if (Monitorings[i].ObjectError)
                         {
-                            Monitorings.RemoveAt(i);
+                            result = MessageBox.Show($"Do you want deleted the monitored folder in '{Monitorings[i].Path}'?", "Delete monitored folder", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            if(result == DialogResult.Yes)
+                                Monitorings.RemoveAt(i);
                         }
                         else
                         {
