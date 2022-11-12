@@ -134,5 +134,15 @@ namespace FolderMonitor
         {
             this.Show();
         }
+
+        private void BtActivate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtOptions_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
