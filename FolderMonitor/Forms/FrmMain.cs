@@ -6,12 +6,14 @@ namespace FolderMonitor
 {
     public partial class FrmMain : Form
     {
+        public static NotifyIcon Notification;
         private List<Monitoring> Monitorings;
         private string PathFolder = @"C:\Users\" + Environment.UserName + @"\AppData\Local\FolderMonitor";
 
         public FrmMain()
         {
             InitializeComponent();
+            Notification = Notify;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)

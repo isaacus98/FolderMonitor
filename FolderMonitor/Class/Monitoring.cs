@@ -74,22 +74,22 @@ namespace FolderMonitor.Class
 
         private void Watcher_Created(object sender, FileSystemEventArgs e)
         {
-            
+            FrmMain.Notification.ShowBalloonTip(1000, "File created", $"File created in {e.FullPath}" + Environment.NewLine + $"File name: {e.Name}", ToolTipIcon.Info);
         }
 
         private void Watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            
+            FrmMain.Notification.ShowBalloonTip(1000, "File changed", $"File changed in {e.FullPath}" + Environment.NewLine + $"File name: {e.Name}", ToolTipIcon.Info);
         }
 
         private void Watcher_Deleted(object sender, FileSystemEventArgs e)
         {
-            
+            FrmMain.Notification.ShowBalloonTip(1000, "File deleted", $"File deleted in {e.FullPath}" + Environment.NewLine + $"File name: {e.Name}", ToolTipIcon.Info);            
         }
 
         private void Watcher_Renamed(object sender, RenamedEventArgs e)
         {
-            
+            FrmMain.Notification.ShowBalloonTip(1000, "File renamed", $"File renamed in {e.FullPath}" + Environment.NewLine + $"Old file name: {e.OldName}" + Environment.NewLine + $"New file name: {e.Name}", ToolTipIcon.Info);
         }
     }
 }
