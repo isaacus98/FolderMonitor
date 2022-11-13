@@ -1,6 +1,7 @@
 using FolderMonitor.Class;
 using FolderMonitor.Forms;
 using Newtonsoft.Json;
+using System;
 
 namespace FolderMonitor
 {
@@ -68,18 +69,10 @@ namespace FolderMonitor
 
         private void BtAddFolder_Click(object sender, EventArgs e)
         {
-            int index;
-
             FrmAddFolder frm = new FrmAddFolder(Monitorings);
             frm.ShowDialog();
 
-            //Refresh datagrid
-            DgvFolders.Rows.Clear();
-            foreach(Monitoring monitoring in Monitorings)
-            {
-                index = DgvFolders.Rows.Add();
-                DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
-            }
+            RefreshDatagrid();
         }
 
         private void BtDeleteFolder_Click(object sender, EventArgs e)
@@ -144,7 +137,22 @@ namespace FolderMonitor
 
         private void BtOptions_Click(object sender, EventArgs e)
         {
+            FrmAddFolder frm = new FrmAddFolder(Monitorings, DgvFolders.CurrentRow.Index);
+            frm.ShowDialog();
 
+            RefreshDatagrid();
+        }
+
+        private void RefreshDatagrid()
+        {
+            int index;
+            //Refresh datagrid
+            DgvFolders.Rows.Clear();
+            foreach (Monitoring monitoring in Monitorings)
+            {
+                index = DgvFolders.Rows.Add();
+                DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+            }
         }
     }
 }

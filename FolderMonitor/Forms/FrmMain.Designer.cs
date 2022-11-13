@@ -30,11 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Gbx = new System.Windows.Forms.GroupBox();
             this.DgvFolders = new System.Windows.Forms.DataGridView();
-            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuDatagrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtAddFolder2 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtDeleteFolder2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +51,7 @@
             this.BtAbout2 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtExit2 = new System.Windows.Forms.ToolStripMenuItem();
             this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFolders)).BeginInit();
             this.ContextMenuDatagrid.SuspendLayout();
@@ -98,16 +98,6 @@
             this.DgvFolders.RowTemplate.Height = 25;
             this.DgvFolders.Size = new System.Drawing.Size(873, 511);
             this.DgvFolders.TabIndex = 0;
-            // 
-            // ColDirectoryPath
-            // 
-            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColDirectoryPath.HeaderText = "Directory path";
-            this.ColDirectoryPath.MinimumWidth = 6;
-            this.ColDirectoryPath.Name = "ColDirectoryPath";
-            this.ColDirectoryPath.ReadOnly = true;
             // 
             // ContextMenuDatagrid
             // 
@@ -251,6 +241,17 @@
             this.Notify.Visible = true;
             this.Notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Notify_MouseDoubleClick);
             // 
+            // ColDirectoryPath
+            // 
+            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColDirectoryPath.HeaderText = "Directory path";
+            this.ColDirectoryPath.MinimumWidth = 6;
+            this.ColDirectoryPath.Name = "ColDirectoryPath";
+            this.ColDirectoryPath.ReadOnly = true;
+            this.ColDirectoryPath.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -284,7 +285,6 @@
 
         private GroupBox Gbx;
         private DataGridView DgvFolders;
-        private DataGridViewTextBoxColumn ColDirectoryPath;
         private MenuStrip Menu;
         private ToolStripMenuItem MenuFile;
         private ToolStripMenuItem BtAddFolder;
@@ -302,5 +302,6 @@
         private ToolStripMenuItem BtDeleteFolder2;
         private ToolStripMenuItem BtActivate;
         private ToolStripMenuItem BtOptions;
+        private DataGridViewTextBoxColumn ColDirectoryPath;
     }
 }

@@ -15,11 +15,35 @@ namespace FolderMonitor.Forms
     public partial class FrmAddFolder : Form
     {
         private List<Monitoring> Monitorings;
+        private int Index = -1;
+        private bool IsEdit;
 
         public FrmAddFolder(List<Monitoring> monitorings)
         {
             InitializeComponent();
             Monitorings = monitorings;
+            IsEdit = false;
+        }
+
+        public FrmAddFolder(List<Monitoring> monitorings, int index)
+        {
+            InitializeComponent();
+            Monitorings= monitorings;
+            Index = index;
+            IsEdit= true;
+        }
+
+        private void FrmAddFolder_Load(object sender, EventArgs e)
+        {
+            if (Index != -1)
+            {
+                TxtPath.Text = Monitorings[Index].Path;
+                ChkIncludeSubdirectories.Checked = Monitorings[Index].IncludeSubdirectories;
+                ChkCreated.Checked = Monitorings[Index].Created;
+                ChkChanged.Checked = Monitorings[Index].Changed;
+                ChkDeleted.Checked = Monitorings[Index].Deleted;
+                ChkRenamed.Checked = Monitorings[Index].Renamed;
+            }
         }
 
         private void BtSearch_Click(object sender, EventArgs e)
@@ -44,11 +68,26 @@ namespace FolderMonitor.Forms
                 return;
             }
 
-            //Create object Monitoring and add Monitoring object in Monitoring list
-            Monitoring monitor = new Monitoring(path: TxtPath.Text, includeSubdirectories: ChkIncludeSubdirectories.Checked, created: ChkCreated.Checked, changed: ChkChanged.Checked, deleted: ChkDeleted.Checked, renamed: ChkRenamed.Checked);
-            monitor.LoadFileSystemWatcher();
-            monitor.LoadEvents();
-            Monitorings.Add(monitor);
+            if (IsEdit)
+            {
+                //Edit Monitoring object in Monitoring list
+                Monitorings[Index].Path = TxtPath.Text;
+                Monitorings[Index].IncludeSubdirectories = ChkIncludeSubdirectories.Checked;
+                Monitorings[Index].Created = ChkCreated.Checked;
+                Monitorings[Index].Changed = ChkChanged.Checked;
+                Monitorings[Index].Deleted = ChkDeleted.Checked;
+                Monitorings[Index].Renamed = ChkRenamed.Checked;
+                Monitorings[Index].LoadFileSystemWatcher();
+                Monitorings[Index].LoadEvents();
+            }
+            else
+            {
+                //Create Monitoring object and add Monitoring object in Monitoring list
+                Monitoring monitor = new Monitoring(path: TxtPath.Text, includeSubdirectories: ChkIncludeSubdirectories.Checked, created: ChkCreated.Checked, changed: ChkChanged.Checked, deleted: ChkDeleted.Checked, renamed: ChkRenamed.Checked);
+                monitor.LoadFileSystemWatcher();
+                monitor.LoadEvents();
+                Monitorings.Add(monitor);
+            }
 
             this.Close();
         }
