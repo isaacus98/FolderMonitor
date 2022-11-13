@@ -30,10 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.Gbx = new System.Windows.Forms.GroupBox();
             this.DgvFolders = new System.Windows.Forms.DataGridView();
+            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContextMenuDatagrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtAddFolder2 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtDeleteFolder2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.BtAbout2 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtExit2 = new System.Windows.Forms.ToolStripMenuItem();
             this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
-            this.ColDirectoryPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvFolders)).BeginInit();
             this.ContextMenuDatagrid.SuspendLayout();
@@ -99,6 +99,17 @@
             this.DgvFolders.Size = new System.Drawing.Size(873, 511);
             this.DgvFolders.TabIndex = 0;
             // 
+            // ColDirectoryPath
+            // 
+            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColDirectoryPath.HeaderText = "Directory path";
+            this.ColDirectoryPath.MinimumWidth = 6;
+            this.ColDirectoryPath.Name = "ColDirectoryPath";
+            this.ColDirectoryPath.ReadOnly = true;
+            this.ColDirectoryPath.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // ContextMenuDatagrid
             // 
             this.ContextMenuDatagrid.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -108,13 +119,13 @@
             this.BtActivate,
             this.BtOptions});
             this.ContextMenuDatagrid.Name = "ContextMenuDatagrid";
-            this.ContextMenuDatagrid.Size = new System.Drawing.Size(171, 108);
+            this.ContextMenuDatagrid.Size = new System.Drawing.Size(215, 136);
             // 
             // BtAddFolder2
             // 
             this.BtAddFolder2.Image = global::FolderMonitor.Properties.Resources.AddFolder;
             this.BtAddFolder2.Name = "BtAddFolder2";
-            this.BtAddFolder2.Size = new System.Drawing.Size(170, 26);
+            this.BtAddFolder2.Size = new System.Drawing.Size(214, 26);
             this.BtAddFolder2.Text = "Add folder";
             this.BtAddFolder2.Click += new System.EventHandler(this.BtAddFolder_Click);
             // 
@@ -122,21 +133,22 @@
             // 
             this.BtDeleteFolder2.Image = global::FolderMonitor.Properties.Resources.DeleteFolder;
             this.BtDeleteFolder2.Name = "BtDeleteFolder2";
-            this.BtDeleteFolder2.Size = new System.Drawing.Size(170, 26);
+            this.BtDeleteFolder2.Size = new System.Drawing.Size(214, 26);
             this.BtDeleteFolder2.Text = "Delete folder";
             this.BtDeleteFolder2.Click += new System.EventHandler(this.BtDeleteFolder_Click);
             // 
             // BtActivate
             // 
             this.BtActivate.Name = "BtActivate";
-            this.BtActivate.Size = new System.Drawing.Size(170, 26);
+            this.BtActivate.Size = new System.Drawing.Size(214, 26);
             this.BtActivate.Text = "Activate";
+            this.BtActivate.ToolTipText = "Enable folder monitoring if not already enabled";
             this.BtActivate.Click += new System.EventHandler(this.BtActivate_Click);
             // 
             // BtOptions
             // 
             this.BtOptions.Name = "BtOptions";
-            this.BtOptions.Size = new System.Drawing.Size(170, 26);
+            this.BtOptions.Size = new System.Drawing.Size(214, 26);
             this.BtOptions.Text = "Options";
             this.BtOptions.Click += new System.EventHandler(this.BtOptions_Click);
             // 
@@ -240,17 +252,6 @@
             this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
             this.Notify.Visible = true;
             this.Notify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Notify_MouseDoubleClick);
-            // 
-            // ColDirectoryPath
-            // 
-            this.ColDirectoryPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ColDirectoryPath.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColDirectoryPath.HeaderText = "Directory path";
-            this.ColDirectoryPath.MinimumWidth = 6;
-            this.ColDirectoryPath.Name = "ColDirectoryPath";
-            this.ColDirectoryPath.ReadOnly = true;
-            this.ColDirectoryPath.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FrmMain
             // 
