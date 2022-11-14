@@ -1,5 +1,6 @@
 using FolderMonitor.Class;
 using FolderMonitor.Forms;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 
@@ -10,6 +11,7 @@ namespace FolderMonitor
         public static NotifyIcon Notification;
         private List<Monitoring> Monitorings;
         private string PathFolder = @"C:\Users\" + Environment.UserName + @"\AppData\Local\FolderMonitor";
+        private RegistryKey Key;
 
         public FrmMain()
         {
@@ -20,6 +22,13 @@ namespace FolderMonitor
         private void FrmMain_Load(object sender, EventArgs e)
         {
             DialogResult result;
+
+            Key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            Object obj = Key.GetValue("FolderMonitor");
+            if (obj == null)
+                BtOpenWithWindows.Checked = false;
+            else
+                BtOpenWithWindows.Checked = true;
 
             //Load configuration file
             if (Directory.Exists(PathFolder))
@@ -152,6 +161,18 @@ namespace FolderMonitor
             {
                 index = DgvFolders.Rows.Add();
                 DgvFolders.Rows[index].Cells[0].Value = monitoring.Path;
+            }
+        }
+
+        private void BtOpenWithWindows_Click(object sender, EventArgs e)
+        {
+            if (BtOpenWithWindows.Checked)
+            {
+                Key.SetValue("FolderMonitor", Application.ExecutablePath);
+            }
+            else
+            {
+                Key.DeleteValue("FolderMonitor");
             }
         }
     }
