@@ -49,6 +49,7 @@
             this.BtAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.BtOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtOpenWithWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.BtAbout2 = new System.Windows.Forms.ToolStripMenuItem();
             this.BtExit2 = new System.Windows.Forms.ToolStripMenuItem();
             this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
@@ -119,13 +120,13 @@
             this.BtActivate,
             this.BtOptions});
             this.ContextMenuDatagrid.Name = "ContextMenuDatagrid";
-            this.ContextMenuDatagrid.Size = new System.Drawing.Size(215, 136);
+            this.ContextMenuDatagrid.Size = new System.Drawing.Size(171, 108);
             // 
             // BtAddFolder2
             // 
             this.BtAddFolder2.Image = global::FolderMonitor.Properties.Resources.AddFolder;
             this.BtAddFolder2.Name = "BtAddFolder2";
-            this.BtAddFolder2.Size = new System.Drawing.Size(214, 26);
+            this.BtAddFolder2.Size = new System.Drawing.Size(170, 26);
             this.BtAddFolder2.Text = "Add folder";
             this.BtAddFolder2.Click += new System.EventHandler(this.BtAddFolder_Click);
             // 
@@ -133,14 +134,14 @@
             // 
             this.BtDeleteFolder2.Image = global::FolderMonitor.Properties.Resources.DeleteFolder;
             this.BtDeleteFolder2.Name = "BtDeleteFolder2";
-            this.BtDeleteFolder2.Size = new System.Drawing.Size(214, 26);
+            this.BtDeleteFolder2.Size = new System.Drawing.Size(170, 26);
             this.BtDeleteFolder2.Text = "Delete folder";
             this.BtDeleteFolder2.Click += new System.EventHandler(this.BtDeleteFolder_Click);
             // 
             // BtActivate
             // 
             this.BtActivate.Name = "BtActivate";
-            this.BtActivate.Size = new System.Drawing.Size(214, 26);
+            this.BtActivate.Size = new System.Drawing.Size(170, 26);
             this.BtActivate.Text = "Activate";
             this.BtActivate.ToolTipText = "Enable folder monitoring if not already enabled";
             this.BtActivate.Click += new System.EventHandler(this.BtActivate_Click);
@@ -148,7 +149,7 @@
             // BtOptions
             // 
             this.BtOptions.Name = "BtOptions";
-            this.BtOptions.Size = new System.Drawing.Size(214, 26);
+            this.BtOptions.Size = new System.Drawing.Size(170, 26);
             this.BtOptions.Text = "Options";
             this.BtOptions.Click += new System.EventHandler(this.BtOptions_Click);
             // 
@@ -220,29 +221,38 @@
             this.ContextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BtOpen,
+            this.BtOpenWithWindows,
             this.BtAbout2,
             this.BtExit2});
             this.ContextMenu.Name = "ContextMenu";
-            this.ContextMenu.Size = new System.Drawing.Size(120, 76);
+            this.ContextMenu.Size = new System.Drawing.Size(212, 128);
             // 
             // BtOpen
             // 
             this.BtOpen.Name = "BtOpen";
-            this.BtOpen.Size = new System.Drawing.Size(119, 24);
+            this.BtOpen.Size = new System.Drawing.Size(211, 24);
             this.BtOpen.Text = "Open";
             this.BtOpen.Click += new System.EventHandler(this.BtOpen_Click);
+            // 
+            // BtOpenWithWindows
+            // 
+            this.BtOpenWithWindows.CheckOnClick = true;
+            this.BtOpenWithWindows.Name = "BtOpenWithWindows";
+            this.BtOpenWithWindows.Size = new System.Drawing.Size(211, 24);
+            this.BtOpenWithWindows.Text = "Open with Windows";
+            this.BtOpenWithWindows.Click += new System.EventHandler(this.BtOpenWithWindows_Click);
             // 
             // BtAbout2
             // 
             this.BtAbout2.Name = "BtAbout2";
-            this.BtAbout2.Size = new System.Drawing.Size(119, 24);
+            this.BtAbout2.Size = new System.Drawing.Size(211, 24);
             this.BtAbout2.Text = "About";
             this.BtAbout2.Click += new System.EventHandler(this.BtAbout_Click);
             // 
             // BtExit2
             // 
             this.BtExit2.Name = "BtExit2";
-            this.BtExit2.Size = new System.Drawing.Size(119, 24);
+            this.BtExit2.Size = new System.Drawing.Size(211, 24);
             this.BtExit2.Text = "Exit";
             this.BtExit2.Click += new System.EventHandler(this.BtExit_Click);
             // 
@@ -304,5 +314,6 @@
         private ToolStripMenuItem BtActivate;
         private ToolStripMenuItem BtOptions;
         private DataGridViewTextBoxColumn ColDirectoryPath;
+        private ToolStripMenuItem BtOpenWithWindows;
     }
 }
