@@ -36,7 +36,7 @@ namespace FolderMonitor
                         //Delete object from list if path not exist
                         if (Monitorings[i].ObjectError)
                         {
-                            result = MessageBox.Show($"Do you want deleted the monitored folder in '{Monitorings[i].Path}'?", "Delete monitored folder", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                            result = MessageBox.Show($"{Monitorings[i].Path} not exist." + Environment.NewLine + $"Do you want deleted the monitored folder in '{Monitorings[i].Path}'?", "Delete monitored folder", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                             if(result == DialogResult.Yes)
                                 Monitorings.RemoveAt(i);
                         }
