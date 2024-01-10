@@ -20,7 +20,7 @@ namespace FolderMonitor.Forms
 
         private void FrmAbout_Load(object sender, EventArgs e)
         {
-            LbVersion2.Text = Application.ProductVersion;
+            LbVersion2.Text = Application.ProductVersion.Substring(0,5);
         }
 
         private void LbIcons2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
