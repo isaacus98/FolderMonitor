@@ -68,6 +68,16 @@ namespace FolderMonitor.Forms
                 return;
             }
 
+            //check if directory is already being monitored
+            foreach(Monitoring monitoring in Monitorings)
+            {
+                if (monitoring.Path == TxtPath.Text)
+                {
+                    MessageBox.Show("This folder is already being monitored", "Folder monitor", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
             if (IsEdit)
             {
                 //Edit Monitoring object in Monitoring list

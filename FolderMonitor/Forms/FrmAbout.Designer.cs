@@ -29,119 +29,119 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAbout));
-            this.PbLogo = new System.Windows.Forms.PictureBox();
-            this.LbNameApp = new System.Windows.Forms.Label();
-            this.LbVersion = new System.Windows.Forms.Label();
-            this.LbVersion2 = new System.Windows.Forms.Label();
-            this.LbCopyright = new System.Windows.Forms.Label();
-            this.LbIcons = new System.Windows.Forms.Label();
-            this.LbIcons2 = new System.Windows.Forms.LinkLabel();
-            this.LbLicense = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
-            this.SuspendLayout();
+            PbLogo = new PictureBox();
+            LbNameApp = new Label();
+            LbVersion = new Label();
+            LbVersion2 = new Label();
+            LbCopyright = new Label();
+            LbIcons = new Label();
+            LbIcons2 = new LinkLabel();
+            LbLicense = new LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)PbLogo).BeginInit();
+            SuspendLayout();
             // 
             // PbLogo
             // 
-            this.PbLogo.Image = global::FolderMonitor.Properties.Resources.Logo;
-            this.PbLogo.Location = new System.Drawing.Point(14, 16);
-            this.PbLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PbLogo.Name = "PbLogo";
-            this.PbLogo.Size = new System.Drawing.Size(118, 128);
-            this.PbLogo.TabIndex = 0;
-            this.PbLogo.TabStop = false;
+            PbLogo.Image = Properties.Resources.Logo;
+            PbLogo.Location = new Point(14, 16);
+            PbLogo.Margin = new Padding(3, 4, 3, 4);
+            PbLogo.Name = "PbLogo";
+            PbLogo.Size = new Size(118, 65);
+            PbLogo.SizeMode = PictureBoxSizeMode.CenterImage;
+            PbLogo.TabIndex = 0;
+            PbLogo.TabStop = false;
             // 
             // LbNameApp
             // 
-            this.LbNameApp.AutoSize = true;
-            this.LbNameApp.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LbNameApp.Location = new System.Drawing.Point(149, 28);
-            this.LbNameApp.Name = "LbNameApp";
-            this.LbNameApp.Size = new System.Drawing.Size(187, 32);
-            this.LbNameApp.TabIndex = 1;
-            this.LbNameApp.Text = "Folder Monitor";
+            LbNameApp.AutoSize = true;
+            LbNameApp.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            LbNameApp.Location = new Point(149, 16);
+            LbNameApp.Name = "LbNameApp";
+            LbNameApp.Size = new Size(187, 32);
+            LbNameApp.TabIndex = 1;
+            LbNameApp.Text = "Folder Monitor";
             // 
             // LbVersion
             // 
-            this.LbVersion.AutoSize = true;
-            this.LbVersion.Location = new System.Drawing.Point(149, 61);
-            this.LbVersion.Name = "LbVersion";
-            this.LbVersion.Size = new System.Drawing.Size(60, 20);
-            this.LbVersion.TabIndex = 2;
-            this.LbVersion.Text = "Version:";
+            LbVersion.AutoSize = true;
+            LbVersion.Location = new Point(149, 61);
+            LbVersion.Name = "LbVersion";
+            LbVersion.Size = new Size(60, 20);
+            LbVersion.TabIndex = 2;
+            LbVersion.Text = "Version:";
             // 
             // LbVersion2
             // 
-            this.LbVersion2.AutoSize = true;
-            this.LbVersion2.Location = new System.Drawing.Point(210, 61);
-            this.LbVersion2.Name = "LbVersion2";
-            this.LbVersion2.Size = new System.Drawing.Size(50, 20);
-            this.LbVersion2.TabIndex = 3;
-            this.LbVersion2.Text = "label3";
+            LbVersion2.AutoSize = true;
+            LbVersion2.Location = new Point(210, 61);
+            LbVersion2.Name = "LbVersion2";
+            LbVersion2.Size = new Size(50, 20);
+            LbVersion2.TabIndex = 3;
+            LbVersion2.Text = "label3";
             // 
             // LbCopyright
             // 
-            this.LbCopyright.AutoSize = true;
-            this.LbCopyright.Location = new System.Drawing.Point(14, 165);
-            this.LbCopyright.Name = "LbCopyright";
-            this.LbCopyright.Size = new System.Drawing.Size(273, 20);
-            this.LbCopyright.TabIndex = 4;
-            this.LbCopyright.Text = "Copyright © 2022 Isaac Morcillo Garcia ";
+            LbCopyright.AutoSize = true;
+            LbCopyright.Location = new Point(14, 97);
+            LbCopyright.Name = "LbCopyright";
+            LbCopyright.Size = new Size(273, 20);
+            LbCopyright.TabIndex = 4;
+            LbCopyright.Text = "Copyright © 2022 Isaac Morcillo Garcia ";
             // 
             // LbIcons
             // 
-            this.LbIcons.AutoSize = true;
-            this.LbIcons.Location = new System.Drawing.Point(14, 189);
-            this.LbIcons.Name = "LbIcons";
-            this.LbIcons.Size = new System.Drawing.Size(46, 20);
-            this.LbIcons.TabIndex = 5;
-            this.LbIcons.Text = "Icons:";
+            LbIcons.AutoSize = true;
+            LbIcons.Location = new Point(14, 121);
+            LbIcons.Name = "LbIcons";
+            LbIcons.Size = new Size(46, 20);
+            LbIcons.TabIndex = 5;
+            LbIcons.Text = "Icons:";
             // 
             // LbIcons2
             // 
-            this.LbIcons2.AutoSize = true;
-            this.LbIcons2.Location = new System.Drawing.Point(64, 189);
-            this.LbIcons2.Name = "LbIcons2";
-            this.LbIcons2.Size = new System.Drawing.Size(83, 20);
-            this.LbIcons2.TabIndex = 6;
-            this.LbIcons2.TabStop = true;
-            this.LbIcons2.Text = "icons8.com";
-            this.LbIcons2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LbIcons2_LinkClicked);
+            LbIcons2.AutoSize = true;
+            LbIcons2.Location = new Point(64, 121);
+            LbIcons2.Name = "LbIcons2";
+            LbIcons2.Size = new Size(83, 20);
+            LbIcons2.TabIndex = 6;
+            LbIcons2.TabStop = true;
+            LbIcons2.Text = "icons8.com";
+            LbIcons2.LinkClicked += LbIcons2_LinkClicked;
             // 
             // LbLicense
             // 
-            this.LbLicense.AutoSize = true;
-            this.LbLicense.Location = new System.Drawing.Point(14, 215);
-            this.LbLicense.Name = "LbLicense";
-            this.LbLicense.Size = new System.Drawing.Size(57, 20);
-            this.LbLicense.TabIndex = 7;
-            this.LbLicense.TabStop = true;
-            this.LbLicense.Text = "License";
-            this.LbLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LbLicense_LinkClicked);
+            LbLicense.AutoSize = true;
+            LbLicense.Location = new Point(14, 147);
+            LbLicense.Name = "LbLicense";
+            LbLicense.Size = new Size(57, 20);
+            LbLicense.TabIndex = 7;
+            LbLicense.TabStop = true;
+            LbLicense.Text = "License";
+            LbLicense.LinkClicked += LbLicense_LinkClicked;
             // 
             // FrmAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 256);
-            this.Controls.Add(this.LbLicense);
-            this.Controls.Add(this.LbIcons2);
-            this.Controls.Add(this.LbIcons);
-            this.Controls.Add(this.LbCopyright);
-            this.Controls.Add(this.LbVersion2);
-            this.Controls.Add(this.LbVersion);
-            this.Controls.Add(this.LbNameApp);
-            this.Controls.Add(this.PbLogo);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FrmAbout";
-            this.Text = "About Folder Monitor";
-            this.Load += new System.EventHandler(this.FrmAbout_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(352, 191);
+            Controls.Add(LbLicense);
+            Controls.Add(LbIcons2);
+            Controls.Add(LbIcons);
+            Controls.Add(LbCopyright);
+            Controls.Add(LbVersion2);
+            Controls.Add(LbVersion);
+            Controls.Add(LbNameApp);
+            Controls.Add(PbLogo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FrmAbout";
+            Text = "About Folder Monitor";
+            Load += FrmAbout_Load;
+            ((System.ComponentModel.ISupportInitialize)PbLogo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

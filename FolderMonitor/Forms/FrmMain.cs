@@ -167,13 +167,9 @@ namespace FolderMonitor
         private void BtOpenWithWindows_Click(object sender, EventArgs e)
         {
             if (BtOpenWithWindows.Checked)
-            {
                 Key.SetValue("FolderMonitor", Application.ExecutablePath);
-            }
             else
-            {
                 Key.DeleteValue("FolderMonitor");
-            }
         }
     }
 }
